@@ -4,7 +4,7 @@ I am a Product Leader dedicated to pushing the boundaries of what is possible wi
 
 As the AI space rapidly evolves, I am actively exploring and experimenting with emerging frameworks and architectures to discover new paradigms for autonomous execution and human-AI collaboration.
 
-[Explore More...] (https://github.com/ashisharma23/SharmaAgentX/edit/main/Explorer.md)
+[Explore More...](https://github.com/ashisharma23/SharmaAgentX/edit/main/Explorer.md)
 ---
 
 ### 🔭 Core Focus Areas
