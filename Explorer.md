@@ -30,4 +30,4 @@
 - https://supabase.com
 
 ## Youtube :
-- (AI Business Ideas)(https://www.youtube.com/watch?v=Ta5g-OxjPO4)
+- [AI Business Ideas](https://www.youtube.com/watch?v=Ta5g-OxjPO4)
