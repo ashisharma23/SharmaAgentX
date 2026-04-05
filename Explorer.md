@@ -24,7 +24,7 @@
 - https://lovable.dev/
 - https://zapier.com/
 - https://base44.com/
-- https://corsair.dev/
+- https://corsair.dev/ : https://www.youtube.com/watch?v=2GgywGrnGKo
 
 ## Frameworks & Orchestration
 - [langchain](https://github.com/langchain-ai/langchain)
