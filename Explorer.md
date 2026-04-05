@@ -11,6 +11,7 @@
 - https://github.com/open-compass/MiroFlow : Focuses on "Heavy-Reasoning" and reproducible results for complex academic or deep-data tasks
 - https://github.com/openclaw/openclaw : Personal & Desktop Automation : Autonomous Task Execution
 - https://github.com/paperclipai/paperclip : Open-source orchestration for zero-human companies --> If OpenClaw is an employee, Paperclip is the company
+-- https://www.youtube.com/watch?v=RHZLJhp-JMM
   
 
 ## Autonomous Task Execution
