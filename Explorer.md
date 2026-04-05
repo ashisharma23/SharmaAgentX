@@ -18,7 +18,9 @@
 
 ## Production-Ready Platforms (No-Code/Low-Code)
 - [n8n](https://github.com/n8n-io/n8n)
+- https://lovable.dev/
 - https://zapier.com/
+- https://base44.com/
 
 ## Frameworks & Orchestration
 - [langchain](https://github.com/langchain-ai/langchain)
