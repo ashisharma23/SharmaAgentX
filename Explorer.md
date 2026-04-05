@@ -3,6 +3,8 @@
 
 ## Agentic Framework
 - https://github.com/agent0ai/agent-zero : Autonomous agentic AI that runs on its own computer, uses and creates tools, learns, self-corrects, and executes transparent workflows
+- https://github.com/karpathy/autoresearch :
+- https://github.com/nousresearch/hermes-agent :Self Learning agent
 
 
  
