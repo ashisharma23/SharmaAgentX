@@ -6,6 +6,7 @@
 - https://github.com/karpathy/autoresearch :
 - https://github.com/nousresearch/hermes-agent :Self Learning agent
 - https://pi.dev/ : Minimal coding agent harness
+- https://arckit.org/
 
 
  
