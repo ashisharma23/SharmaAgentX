@@ -1,0 +1,30 @@
+Gartner expects more than 40% of agentic AI projects to be scrapped by the end of 2027. Not because the models got worse — because most teams built an agent before they built the architecture underneath it.
+
+The pattern I keep seeing in production systems that actually survive contact with real enterprise data isn't a bigger model or a cleverer prompt. It's a stack, and the order matters:
+
+**Ontology → Knowledge Graph → Control Plane → Deterministic + LLM Reasoning → Agentic Graph → Execution Loop**
+
+Here's why each layer exists, and what breaks when you skip it.
+
+**Ontology: the vocabulary the agent is allowed to use.** Before an agent touches your data, it needs a formal definition of your entities, roles, and relationships — what a "customer," a "claim," or an "approval threshold" actually means in your business. A recent arXiv study (2604.00555) on ontology-constrained neurosymbolic agents tested this directly: 1,800 runs across five regulated industries and three LLMs (Claude Sonnet 4, Qwen 2.5 72B, Gemma 4 26B). Ontology-grounded agents significantly outperformed ungrounded ones on metric accuracy and role consistency (p < .001), and the effect was largest precisely where the model's own training data was weakest on the domain. The lesson for architects: an ontology isn't documentation, it's a runtime constraint that closes the gap a bigger model can't close on its own.
+
+**Knowledge graph: the ontology populated with your actual facts.** This is where entities become instances and relationships become traversable paths — who reports to whom, which contract supersedes which, which system owns the source of truth. Gartner projects more than half of enterprise AI agent systems will run on graph-based context by 2028, and the enterprise knowledge graph market is on a trajectory from roughly $1.9B today toward $10B by 2032. The reason isn't fashion. Most enterprise agent failures trace back to missing or stale context, not weak reasoning — and a knowledge graph is the mechanism that keeps context current and queryable instead of stuffed into a prompt.
+
+**Control plane: governance before generation.** This is the layer that decides what an agent is allowed to see, call, and do — identity, access scope, tool discovery, approval thresholds — before a single token gets generated. Google's repositioning around an "agentic enterprise control plane" at Cloud Next 2026 reflects where the market is converging: context and identity are becoming core infrastructure, not an afterthought bolted on after a pilot works. If you don't own this layer, you don't have an audit trail, and "who approved this action" becomes unanswerable after the fact.
+
+**Deterministic + LLM reasoning: coupling, not replacement.** The most consequential architectural shift in 2026 is enterprises abandoning the "LLMs vs. symbolic systems" framing. The neurosymbolic research above formalizes this as asymmetric coupling: most current systems constrain agent *inputs* (context assembly, tool scoping) but leave *outputs* unchecked. The stronger pattern — and the direction the research argues for — is symmetric coupling, where a symbolic engine also validates, verifies, or overrides the LLM's output against ontology-defined rules before it executes. Practically: let the LLM handle ambiguity and language; let deterministic logic handle compliance, arithmetic, and anything with a wrong answer.
+
+**Agentic graph: the topology of who does what.** Once you have multiple agents, you need to engineer the graph itself — which nodes exist (agents, deterministic functions, routers, human checkpoints), which transitions are permitted, and how the runtime work graph mutates as tasks unfold. This is distinct from any single agent's reasoning; it's organizational design applied to software. Skipping this step is why so many "multi-agent" demos collapse under real workloads — there's no defined boundary for delegation, escalation, or failure containment.
+
+**Execution loop: how each node actually runs.** At the bottom of the stack is the familiar reason-act-observe cycle (ReAct and its variants) — the mechanics of a single agent pulling context, calling a tool, checking the result, and deciding the next step. This is the layer most teams start with, which is exactly the problem. An execution loop with no control plane above it and no ontology behind it is a fast way to automate the wrong action at scale.
+
+**What this means for build-vs-buy.** Platform vendors are racing to own layers two through four — knowledge graph, control plane, and reasoning coupling — because that's where defensibility lives; the execution loop itself is close to commoditized. If you're evaluating an agent platform, ask where its ontology comes from, whether context is graph-backed or prompt-stuffed, and whether output validation is symmetric or input-only. Those three answers predict production reliability better than any benchmark on the model card.
+
+**Who owns this when it fails?** With this stack, the answer is traceable: an ontology violation, a stale graph edge, a control-plane denial, a reasoning mismatch, a bad graph transition, or a loop that didn't terminate correctly. Without it, the honest answer is "the LLM," which is not an answer — it's a shrug.
+
+The architecture isn't exotic. It's the same discipline distributed systems have always required: define your data model, govern access, separate deterministic logic from probabilistic reasoning, design your topology, and only then write the loop. The novelty in 2026 is that the reasoning layer now includes a model that can be right for the wrong reasons — which is exactly why the layers above it can't be optional.
+
+---
+*Sources: Gartner (agentic AI project cancellations, task-specific agent adoption, graph-based context by 2028); "Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems" (arXiv:2604.00555); Bain & Company on Google Cloud Next 2026; Promethium enterprise knowledge graph market guide; TrueFoundry on graph engineering for multi-agent systems.*
+
+#AgenticAI #EnterpriseArchitecture #KnowledgeGraphs #AIGovernance #NeurosymbolicAI
