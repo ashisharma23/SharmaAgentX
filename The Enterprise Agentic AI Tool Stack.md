@@ -155,7 +155,7 @@ Standards that let agents talk to tools and to each other without bespoke point-
 
 ## 5a. The Governed Semantic Layer — the piece most stacks skip
 
-> *Community input: this section was added following practitioner feedback from finance and healthcare deployments — thank you to Ashish for flagging it.*
+> *Community input: this section was added following practitioner feedback from finance and healthcare deployments — thank you to George [https://www.linkedin.com/in/andronchik/] for flagging it.*
 
 Orchestration, memory, and observability get most of the attention because they're where agents visibly *fail*: a bad tool call, a lost session, a runaway loop. But a large share of production incidents are quieter than that — the agent completes the task, gives a confident answer, and the answer is **wrong because the underlying metric was never governed**.
 
